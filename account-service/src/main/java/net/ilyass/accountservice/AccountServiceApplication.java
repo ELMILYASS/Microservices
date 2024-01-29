@@ -1,11 +1,13 @@
 package net.ilyass.accountservice;
 
+import net.ilyass.accountservice.config.ConfigParams;
 import net.ilyass.accountservice.entities.BankAccount;
 import net.ilyass.accountservice.enums.AccountType;
 import net.ilyass.accountservice.repositories.BankAccountRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
 
@@ -13,7 +15,7 @@ import java.time.LocalDate;
 import java.util.UUID;
 
 @SpringBootApplication
-
+@EnableConfigurationProperties(ConfigParams.class)
 @EnableFeignClients
 public class AccountServiceApplication {
 
